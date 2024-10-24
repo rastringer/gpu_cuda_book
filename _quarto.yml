@@ -5,6 +5,7 @@ project:
 book:
   title: "Introduction to GPUs and CUDA programming"
   author: "RA Stringer"
+  repo-url: "https://github.com/rastringer/gpu_cuda_book"
   cover-image: "images/logo.png"
   chapters:
     - index.qmd

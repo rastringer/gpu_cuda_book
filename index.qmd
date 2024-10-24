@@ -1,3 +1,19 @@
 # Preface {.unnumbered}
 
 This short course aims to equip readers and participants with an understanding of GPU architecture and considerations for programming accelerated workloads effectively.
+
+In an era where computational demands are soaring for training large machine learning models to rendering complex graphics, understanding GPU accelerators and how to program them effectively is an essential skill.
+
+In this short course we will cover just enough to build a strong awareness of how accelerators work and how to approach their parallel programming paradigm in C and Python.
+
+Topics we will cover include:
+
+* Parallel vs sequential execution
+
+* Thread hierarchy and organization
+
+* CUDA kernel functions: threads, blocks and grids
+
+* Machine learning performance optimization
+
+If you have requests or suggestions, please submit a pull request [here](https://github.com/rastringer/gpu_cuda_book).

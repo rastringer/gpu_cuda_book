@@ -264,7 +264,7 @@
     "href": "index.html",
     "title": "Introduction to GPUs and CUDA programming",
     "section": "",
-    "text": "Preface\nThis short course aims to equip readers and participants with an understanding of GPU architecture and considerations for programming accelerated workloads effectively.",
+    "text": "Preface\nThis short course aims to equip readers and participants with an understanding of GPU architecture and considerations for programming accelerated workloads effectively.\nIn an era where computational demands are soaring for training large machine learning models to rendering complex graphics, understanding GPU accelerators and how to program them effectively is an essential skill.\nIn this short course we will cover just enough to build a strong awareness of how accelerators work and how to approach their parallel programming paradigm in C and Python.\nTopics we will cover include:\n\nParallel vs sequential execution\nThread hierarchy and organization\nCUDA kernel functions: threads, blocks and grids\nMachine learning performance optimization\n\nIf you have requests or suggestions, please submit a pull request here.",
     "crumbs": [
       "Preface"
     ]
