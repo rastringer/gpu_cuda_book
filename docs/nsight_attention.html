@@ -195,6 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#install-nsight-tools" id="toc-install-nsight-tools" class="nav-link active" data-scroll-target="#install-nsight-tools"><span class="header-section-number">5.0.1</span> Install Nsight tools</a></li>
   <li><a href="#check-the-installation" id="toc-check-the-installation" class="nav-link" data-scroll-target="#check-the-installation"><span class="header-section-number">5.0.2</span> Check the installation</a></li>
   <li><a href="#simple-attention" id="toc-simple-attention" class="nav-link" data-scroll-target="#simple-attention"><span class="header-section-number">5.0.3</span> Simple attention</a></li>
+  <li><a href="#flash-attention" id="toc-flash-attention" class="nav-link" data-scroll-target="#flash-attention"><span class="header-section-number">5.1</span> Flash Attention</a></li>
   </ul>
 </nav>
     </div>
@@ -436,6 +437,9 @@ Generated:
 <li>Experiment with different batch sizes or sequence lengths to find the optimal configuration for your hardware.</li>
 <li>Consider using mixed precision (float16).</li>
 </ul>
+</section>
+<section id="flash-attention" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="flash-attention"><span class="header-section-number">5.1</span> Flash Attention</h2>
 <p>Let’s optimize our attention mechanism to use the <code>torch.nn.functional.scaled_dot_product_attention</code> function, optimized for GPUs. This method uses the Flash Attention algorithm when available.</p>
 <div id="cell-13" class="cell" data-outputid="71ab40c1-543e-4c19-f1bd-1b55adf0c5e2" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>writefile profiler.py</span>
