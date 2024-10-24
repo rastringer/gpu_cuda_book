@@ -5,7 +5,7 @@ project:
 book:
   title: "Introduction to GPUs and CUDA programming"
   author: "RA Stringer"
-  cover-image: "/images/logo.png"
+  cover-image: "images/logo.png"
   chapters:
     - index.qmd
     - gpu_architecture.ipynb
