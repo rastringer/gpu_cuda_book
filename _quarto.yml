@@ -1,0 +1,28 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Introduction to GPUs and CUDA programming"
+  author: "RA Stringer"
+  date: "10/24/2024"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - gpu_architecture.ipynb
+    - c_to_cuda.ipynb
+    - python_cuda.ipynb
+    - nsight_attention.ipynb
+    - summary.qmd
+    # - references.qmd
+
+# bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+
