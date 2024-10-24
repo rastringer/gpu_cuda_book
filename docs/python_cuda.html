@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Python and CUDA – Introduction to GPUs and CUDA programming</title>
+<title>3&nbsp; Python and CUDA – Introduction to GPUs and CUDA programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./python_cuda.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Python and CUDA</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./python_cuda.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Python and CUDA</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -148,38 +148,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./gpu_architecture.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting to know the device and platform</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Getting to know the device and platform</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./c_to_cuda.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting started with CUDA</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting started with CUDA</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./python_cuda.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Python and CUDA</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Python and CUDA</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./nsight_attention.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Profiling and optimizing PyTorch training</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Profiling and optimizing PyTorch training</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
     </ul>
@@ -192,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#mandelbrot-set" id="toc-mandelbrot-set" class="nav-link active" data-scroll-target="#mandelbrot-set"><span class="header-section-number">4.1</span> Mandelbrot set</a></li>
+  <li><a href="#mandelbrot-set" id="toc-mandelbrot-set" class="nav-link active" data-scroll-target="#mandelbrot-set"><span class="header-section-number">3.1</span> Mandelbrot set</a></li>
   </ul>
 </nav>
     </div>
@@ -201,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Python and CUDA</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Python and CUDA</span></h1>
 </div>
 
 
@@ -281,8 +275,8 @@ Last 10 results: [31900 31910 31920 31930 31940 31950 31960 31970 31980 31990]</
   warn(NumbaPerformanceWarning(msg))</code></pre>
 </div>
 </div>
-<section id="mandelbrot-set" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="mandelbrot-set"><span class="header-section-number">4.1</span> Mandelbrot set</h2>
+<section id="mandelbrot-set" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="mandelbrot-set"><span class="header-section-number">3.1</span> Mandelbrot set</h2>
 <p>The Mandelbrot set is a two-dimensional, geometric representation of a fractal and can create visually stunning images.</p>
 <p>In the following code, we see</p>
 <pre><code>c_real = min_x + (max_x - min_x) * col / width
@@ -802,12 +796,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./c_to_cuda.html" class="pagination-link" aria-label="Getting started with CUDA">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting started with CUDA</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting started with CUDA</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./nsight_attention.html" class="pagination-link" aria-label="Profiling and optimizing PyTorch training">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Profiling and optimizing PyTorch training</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Profiling and optimizing PyTorch training</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

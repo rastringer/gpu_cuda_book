@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Getting started with CUDA – Introduction to GPUs and CUDA programming</title>
+<title>2&nbsp; Getting started with CUDA – Introduction to GPUs and CUDA programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./c_to_cuda.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting started with CUDA</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./c_to_cuda.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting started with CUDA</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -148,38 +148,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./gpu_architecture.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting to know the device and platform</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Getting to know the device and platform</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./c_to_cuda.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting started with CUDA</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting started with CUDA</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./python_cuda.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Python and CUDA</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Python and CUDA</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./nsight_attention.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Profiling and optimizing PyTorch training</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Profiling and optimizing PyTorch training</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
     </ul>
@@ -192,21 +186,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#resources" id="toc-resources" class="nav-link active" data-scroll-target="#resources"><span class="header-section-number">3.1</span> Resources</a></li>
-  <li><a href="#writing-and-running-c-code-in-a-colab" id="toc-writing-and-running-c-code-in-a-colab" class="nav-link" data-scroll-target="#writing-and-running-c-code-in-a-colab"><span class="header-section-number">3.2</span> Writing and running C code in a Colab</a></li>
-  <li><a href="#hello-world" id="toc-hello-world" class="nav-link" data-scroll-target="#hello-world"><span class="header-section-number">3.3</span> Hello, World!</a></li>
-  <li><a href="#and-from-the-gpu" id="toc-and-from-the-gpu" class="nav-link" data-scroll-target="#and-from-the-gpu"><span class="header-section-number">3.4</span> and from the GPU</a></li>
-  <li><a href="#blocks-and-threads" id="toc-blocks-and-threads" class="nav-link" data-scroll-target="#blocks-and-threads"><span class="header-section-number">3.5</span> Blocks and threads</a></li>
-  <li><a href="#threads-and-indexes" id="toc-threads-and-indexes" class="nav-link" data-scroll-target="#threads-and-indexes"><span class="header-section-number">3.6</span> Threads and indexes</a></li>
-  <li><a href="#allocating-memory" id="toc-allocating-memory" class="nav-link" data-scroll-target="#allocating-memory"><span class="header-section-number">3.7</span> Allocating memory</a></li>
-  <li><a href="#profiling" id="toc-profiling" class="nav-link" data-scroll-target="#profiling"><span class="header-section-number">3.8</span> Profiling</a></li>
-  <li><a href="#time-it" id="toc-time-it" class="nav-link" data-scroll-target="#time-it"><span class="header-section-number">3.9</span> Time it</a></li>
-  <li><a href="#exercise-cuda-version" id="toc-exercise-cuda-version" class="nav-link" data-scroll-target="#exercise-cuda-version"><span class="header-section-number">3.10</span> Exercise: CUDA version</a></li>
-  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">3.11</span> Solution</a></li>
-  <li><a href="#grid-stride" id="toc-grid-stride" class="nav-link" data-scroll-target="#grid-stride"><span class="header-section-number">3.12</span> Grid stride</a></li>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">3.13</span> Exercise</a></li>
-  <li><a href="#solution-1" id="toc-solution-1" class="nav-link" data-scroll-target="#solution-1"><span class="header-section-number">3.14</span> Solution</a></li>
-  <li><a href="#visualizing-the-grid-stride" id="toc-visualizing-the-grid-stride" class="nav-link" data-scroll-target="#visualizing-the-grid-stride"><span class="header-section-number">3.15</span> Visualizing the grid stride</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link active" data-scroll-target="#resources"><span class="header-section-number">2.1</span> Resources</a></li>
+  <li><a href="#writing-and-running-c-code-in-a-colab" id="toc-writing-and-running-c-code-in-a-colab" class="nav-link" data-scroll-target="#writing-and-running-c-code-in-a-colab"><span class="header-section-number">2.2</span> Writing and running C code in a Colab</a></li>
+  <li><a href="#hello-world" id="toc-hello-world" class="nav-link" data-scroll-target="#hello-world"><span class="header-section-number">2.3</span> Hello, World!</a></li>
+  <li><a href="#and-from-the-gpu" id="toc-and-from-the-gpu" class="nav-link" data-scroll-target="#and-from-the-gpu"><span class="header-section-number">2.4</span> and from the GPU</a></li>
+  <li><a href="#blocks-and-threads" id="toc-blocks-and-threads" class="nav-link" data-scroll-target="#blocks-and-threads"><span class="header-section-number">2.5</span> Blocks and threads</a></li>
+  <li><a href="#threads-and-indexes" id="toc-threads-and-indexes" class="nav-link" data-scroll-target="#threads-and-indexes"><span class="header-section-number">2.6</span> Threads and indexes</a></li>
+  <li><a href="#allocating-memory" id="toc-allocating-memory" class="nav-link" data-scroll-target="#allocating-memory"><span class="header-section-number">2.7</span> Allocating memory</a></li>
+  <li><a href="#profiling" id="toc-profiling" class="nav-link" data-scroll-target="#profiling"><span class="header-section-number">2.8</span> Profiling</a></li>
+  <li><a href="#time-it" id="toc-time-it" class="nav-link" data-scroll-target="#time-it"><span class="header-section-number">2.9</span> Time it</a></li>
+  <li><a href="#exercise-cuda-version" id="toc-exercise-cuda-version" class="nav-link" data-scroll-target="#exercise-cuda-version"><span class="header-section-number">2.10</span> Exercise: CUDA version</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">2.11</span> Solution</a></li>
+  <li><a href="#grid-stride" id="toc-grid-stride" class="nav-link" data-scroll-target="#grid-stride"><span class="header-section-number">2.12</span> Grid stride</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">2.13</span> Exercise</a></li>
+  <li><a href="#solution-1" id="toc-solution-1" class="nav-link" data-scroll-target="#solution-1"><span class="header-section-number">2.14</span> Solution</a></li>
+  <li><a href="#visualizing-the-grid-stride" id="toc-visualizing-the-grid-stride" class="nav-link" data-scroll-target="#visualizing-the-grid-stride"><span class="header-section-number">2.15</span> Visualizing the grid stride</a></li>
   </ul>
 </nav>
     </div>
@@ -215,7 +209,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting started with CUDA</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting started with CUDA</span></h1>
 </div>
 
 
@@ -234,8 +228,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p><a href="https://colab.research.google.com/github/rastringer/GPU_CUDA_overview/blob/main/c_to_cuda.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 <p>In this notebook, we dive into basic CUDA programming in C. If you don’t know C well, don’t worry, the code is straightforward with a focus on the CUDA considerations. Doing the exercises and following the examples can help with low-level understanding, which can often be abstracted away by the equivalent Python libraries.</p>
-<section id="resources" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="resources"><span class="header-section-number">3.1</span> Resources</h2>
+<section id="resources" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="resources"><span class="header-section-number">2.1</span> Resources</h2>
 <p>We can do all exercises on the free <code>T4</code> GPU on Colab.</p>
 <p>Let’s check we have the Nvidia CUDA Compiler Driver (NVCC) installed:</p>
 <div id="cell-2" class="cell">
@@ -248,14 +242,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext nvcc4jupyter</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="writing-and-running-c-code-in-a-colab" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="writing-and-running-c-code-in-a-colab"><span class="header-section-number">3.2</span> Writing and running C code in a Colab</h2>
+<section id="writing-and-running-c-code-in-a-colab" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="writing-and-running-c-code-in-a-colab"><span class="header-section-number">2.2</span> Writing and running C code in a Colab</h2>
 <p>Thanks to the <code>nvcc4jupyter</code> extension, we can run C/C++ code from our notebook cells.</p>
 <p>Simply annotate each code cell with <code>%%cuda</code> at the top.</p>
 <p>Syntax checking may mean a lot of read and yellow lines on our code, since it’s focused on Python code, so it’s best to turn this feature off: Settings -&gt; Editor -&gt; Code diagnostics -&gt; None.</p>
 </section>
-<section id="hello-world" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="hello-world"><span class="header-section-number">3.3</span> Hello, World!</h2>
+<section id="hello-world" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="hello-world"><span class="header-section-number">2.3</span> Hello, World!</h2>
 <div id="cell-6" class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>cuda</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -273,8 +267,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="and-from-the-gpu" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="and-from-the-gpu"><span class="header-section-number">3.4</span> and from the GPU</h2>
+<section id="and-from-the-gpu" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="and-from-the-gpu"><span class="header-section-number">2.4</span> and from the GPU</h2>
 <p>Let’s adjust the code to make it run on the GPU.</p>
 <p>We will need to annotate functions with</p>
 <p><code>__global__</code></p>
@@ -297,8 +291,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="blocks-and-threads" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="blocks-and-threads"><span class="header-section-number">3.5</span> Blocks and threads</h2>
+<section id="blocks-and-threads" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="blocks-and-threads"><span class="header-section-number">2.5</span> Blocks and threads</h2>
 <p>You may be wondering why we have triple angle brackets in the function call:</p>
 <p><code>&lt;&lt;&lt;1, 1&gt;&gt;&gt;</code></p>
 <p>These are required parameters for CUDA denoting the blocks and threads in which our tasks should run.</p>
@@ -331,8 +325,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="threads-and-indexes" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="threads-and-indexes"><span class="header-section-number">3.6</span> Threads and indexes</h2>
+<section id="threads-and-indexes" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="threads-and-indexes"><span class="header-section-number">2.6</span> Threads and indexes</h2>
 <p>Each thread has an index denoting its place in a block. Blocks also are indexed, and grouped into a grid.</p>
 <p>There are useful methods for identifying these indexes:</p>
 <p><code>threadIdx.x</code> : identifies the index of the thread <code>blockIdx.x</code> : identifies the index of the block <code>blockDim.x</code> : represents the number of threads in a block</p>
@@ -376,8 +370,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="allocating-memory" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="allocating-memory"><span class="header-section-number">3.7</span> Allocating memory</h2>
+<section id="allocating-memory" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="allocating-memory"><span class="header-section-number">2.7</span> Allocating memory</h2>
 <p>CUDA version 6 and above has simplified memory allocation for both the CPU host and as or or many GPU devices with little additional work necessary by the developer.</p>
 <p>C uses calls to <code>malloc</code> and <code>free</code> to allocate and liberate memory; we simply replace these with <code>cudaMallocManaged</code> and <code>cudaFree</code>.</p>
 <div id="cell-16" class="cell">
@@ -415,8 +409,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="profiling" class="level2" data-number="3.8">
-<h2 data-number="3.8" class="anchored" data-anchor-id="profiling"><span class="header-section-number">3.8</span> Profiling</h2>
+<section id="profiling" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="profiling"><span class="header-section-number">2.8</span> Profiling</h2>
 <p>Let’s create an executable with the same code so we can profile and time it. To do that, we write a file using cell magic functions, compile and run.</p>
 <div id="cell-18" class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>writefile square.c</span>
@@ -456,14 +450,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>gcc square.c <span class="op">-</span>o square</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="time-it" class="level2" data-number="3.9">
-<h2 data-number="3.9" class="anchored" data-anchor-id="time-it"><span class="header-section-number">3.9</span> Time it</h2>
+<section id="time-it" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="time-it"><span class="header-section-number">2.9</span> Time it</h2>
 <div id="cell-21" class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>time .<span class="op">/</span>square</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="exercise-cuda-version" class="level2" data-number="3.10">
-<h2 data-number="3.10" class="anchored" data-anchor-id="exercise-cuda-version"><span class="header-section-number">3.10</span> Exercise: CUDA version</h2>
+<section id="exercise-cuda-version" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="exercise-cuda-version"><span class="header-section-number">2.10</span> Exercise: CUDA version</h2>
 <p>Let’s use <code>cudaMallocManaged</code> and <code>cudaFree</code>. Developers often prefix variables to be put on the device with <code>d_</code>, we will write <code>device_</code> to make this clear.</p>
 <div id="cell-23" class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>cuda</span>
@@ -547,8 +541,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="solution" class="level2" data-number="3.11">
-<h2 data-number="3.11" class="anchored" data-anchor-id="solution"><span class="header-section-number">3.11</span> Solution</h2>
+<section id="solution" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="solution"><span class="header-section-number">2.11</span> Solution</h2>
 <div id="cell-25" class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>cuda</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -657,8 +651,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>time .<span class="op">/</span>cuda_square</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="grid-stride" class="level2" data-number="3.12">
-<h2 data-number="3.12" class="anchored" data-anchor-id="grid-stride"><span class="header-section-number">3.12</span> Grid stride</h2>
+<section id="grid-stride" class="level2" data-number="2.12">
+<h2 data-number="2.12" class="anchored" data-anchor-id="grid-stride"><span class="header-section-number">2.12</span> Grid stride</h2>
 <p>Let’s remind ourselves: grids are the highest level of the GPU hierarchy:</p>
 <p>Threads -&gt; Blocks -&gt; Grids</p>
 <p>Often in CUDA programming, the number of threads in a grid is smaller than the data upon which we operate.</p>
@@ -688,8 +682,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span>
 <span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="exercise" class="level2" data-number="3.13">
-<h2 data-number="3.13" class="anchored" data-anchor-id="exercise"><span class="header-section-number">3.13</span> Exercise</h2>
+<section id="exercise" class="level2" data-number="2.13">
+<h2 data-number="2.13" class="anchored" data-anchor-id="exercise"><span class="header-section-number">2.13</span> Exercise</h2>
 <p>For this exercise, we use the <code>%%writefile</code> magic function to create a file so we can then generate an outputs for a visualization, rather than running it inline with <code>%%cuda</code>.</p>
 <div id="cell-33" class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>writefile grid_stride.cu</span>
@@ -763,8 +757,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-69"><a href="#cb21-69" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="solution-1" class="level2" data-number="3.14">
-<h2 data-number="3.14" class="anchored" data-anchor-id="solution-1"><span class="header-section-number">3.14</span> Solution</h2>
+<section id="solution-1" class="level2" data-number="2.14">
+<h2 data-number="2.14" class="anchored" data-anchor-id="solution-1"><span class="header-section-number">2.14</span> Solution</h2>
 <div id="cell-35" class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>writefile grid_stride.cu</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -838,8 +832,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>.<span class="op">/</span>grid_stride <span class="op">&gt;</span> output.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="visualizing-the-grid-stride" class="level2" data-number="3.15">
-<h2 data-number="3.15" class="anchored" data-anchor-id="visualizing-the-grid-stride"><span class="header-section-number">3.15</span> Visualizing the grid stride</h2>
+<section id="visualizing-the-grid-stride" class="level2" data-number="2.15">
+<h2 data-number="2.15" class="anchored" data-anchor-id="visualizing-the-grid-stride"><span class="header-section-number">2.15</span> Visualizing the grid stride</h2>
 <div id="cell-38" class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -1353,12 +1347,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./gpu_architecture.html" class="pagination-link" aria-label="Getting to know the device and platform">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting to know the device and platform</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Getting to know the device and platform</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./python_cuda.html" class="pagination-link" aria-label="Python and CUDA">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Python and CUDA</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Python and CUDA</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

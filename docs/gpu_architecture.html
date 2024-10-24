@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Getting to know the device and platform – Introduction to GPUs and CUDA programming</title>
+<title>1&nbsp; Getting to know the device and platform – Introduction to GPUs and CUDA programming</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./c_to_cuda.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gpu_architecture.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting to know the device and platform</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./gpu_architecture.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Getting to know the device and platform</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -114,38 +114,32 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./gpu_architecture.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting to know the device and platform</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Getting to know the device and platform</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./c_to_cuda.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting started with CUDA</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting started with CUDA</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./python_cuda.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Python and CUDA</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Python and CUDA</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./nsight_attention.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Profiling and optimizing PyTorch training</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Profiling and optimizing PyTorch training</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
     </ul>
@@ -158,15 +152,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#abstractions" id="toc-abstractions" class="nav-link active" data-scroll-target="#abstractions"><span class="header-section-number">2.1</span> Abstractions</a></li>
-  <li><a href="#ptx" id="toc-ptx" class="nav-link" data-scroll-target="#ptx"><span class="header-section-number">2.2</span> PTX</a>
+  <li><a href="#abstractions" id="toc-abstractions" class="nav-link active" data-scroll-target="#abstractions"><span class="header-section-number">1.1</span> Abstractions</a></li>
+  <li><a href="#ptx" id="toc-ptx" class="nav-link" data-scroll-target="#ptx"><span class="header-section-number">1.2</span> PTX</a>
   <ul class="collapse">
-  <li><a href="#programming-model" id="toc-programming-model" class="nav-link" data-scroll-target="#programming-model"><span class="header-section-number">2.2.1</span> Programming model</a></li>
+  <li><a href="#programming-model" id="toc-programming-model" class="nav-link" data-scroll-target="#programming-model"><span class="header-section-number">1.2.1</span> Programming model</a></li>
   </ul></li>
-  <li><a href="#sass" id="toc-sass" class="nav-link" data-scroll-target="#sass"><span class="header-section-number">2.3</span> SASS</a></li>
-  <li><a href="#high-level-architecture" id="toc-high-level-architecture" class="nav-link" data-scroll-target="#high-level-architecture"><span class="header-section-number">2.4</span> High level architecture</a></li>
-  <li><a href="#streaming-multiprocessors" id="toc-streaming-multiprocessors" class="nav-link" data-scroll-target="#streaming-multiprocessors"><span class="header-section-number">2.5</span> Streaming multiprocessors</a></li>
-  <li><a href="#teraflops" id="toc-teraflops" class="nav-link" data-scroll-target="#teraflops"><span class="header-section-number">2.6</span> TeraFlops</a></li>
+  <li><a href="#sass" id="toc-sass" class="nav-link" data-scroll-target="#sass"><span class="header-section-number">1.3</span> SASS</a></li>
+  <li><a href="#high-level-architecture" id="toc-high-level-architecture" class="nav-link" data-scroll-target="#high-level-architecture"><span class="header-section-number">1.4</span> High level architecture</a></li>
+  <li><a href="#streaming-multiprocessors" id="toc-streaming-multiprocessors" class="nav-link" data-scroll-target="#streaming-multiprocessors"><span class="header-section-number">1.5</span> Streaming multiprocessors</a></li>
+  <li><a href="#teraflops" id="toc-teraflops" class="nav-link" data-scroll-target="#teraflops"><span class="header-section-number">1.6</span> TeraFlops</a></li>
   </ul>
 </nav>
     </div>
@@ -175,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting to know the device and platform</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Getting to know the device and platform</span></h1>
 </div>
 
 
@@ -202,8 +196,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p>arithmetic operations eg matrix multiplications for neural networks</p></li>
 </ul>
 <p>When getting to know the device, it can be helpful to have a quick look at PTX, SASS, warps, cooperative groups, Tensor Cores and memory hierarchy.</p>
-<section id="abstractions" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="abstractions"><span class="header-section-number">2.1</span> Abstractions</h2>
+<section id="abstractions" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="abstractions"><span class="header-section-number">1.1</span> Abstractions</h2>
 <p>CUDA, or “Compute Unite Device Architecture” as it was introduced in 2006, is a parallel computing platform and programming model that uses the parallel engine in NVIDIA GPUs to solve computational tasks.</p>
 <p>There are three principal abstractions:</p>
 <ul>
@@ -214,34 +208,34 @@ ul.task-list li input[type="checkbox"] {
 <p>Basically CUDA allows developers to partition problems into sub-problems that can be solved by <em>threads</em> running in parallel, in <em>blocks</em>. Threads all run the same code, and an ID for each thread allows access to memory addresses and control decisions.</p>
 <p>Threads are arranged as a <em>grid</em> of <em>thread blocks</em>.</p>
 </section>
-<section id="ptx" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="ptx"><span class="header-section-number">2.2</span> PTX</h2>
+<section id="ptx" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="ptx"><span class="header-section-number">1.2</span> PTX</h2>
 <p>PTX is a low-level, <em>parallel thread execution</em> virtual machine and instruction set architecture (ISA). In other words, it is a paradigm that leverages the GPU as a data-parallel computing device.</p>
-<section id="programming-model" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="programming-model"><span class="header-section-number">2.2.1</span> Programming model</h3>
+<section id="programming-model" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="programming-model"><span class="header-section-number">1.2.1</span> Programming model</h3>
 <p>PTX’s programming model is parallel: it specifies the execution of a given thread of a parallel thread array. A CTA, or <em>cooperative thread array</em>, is an array of threads that execute a kernel concurrently or in parallel.</p>
 </section>
 </section>
-<section id="sass" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="sass"><span class="header-section-number">2.3</span> SASS</h2>
+<section id="sass" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="sass"><span class="header-section-number">1.3</span> SASS</h2>
 <p>SASS is the low-level assembly language that compiles to binary microcode, which executes natively on NVIDIA GPUs.</p>
-<p><img src="https://github.com/rastringer/GPU_CUDA_overview/blob/main/images/gpu_arch1.png?raw=true" width="1500"></p>
+<p><img src="https://github.com/rastringer/GPU_CUDA_overview/blob/main/images/gpu_arch1.png?raw=true" width="1000"></p>
 </section>
-<section id="high-level-architecture" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="high-level-architecture"><span class="header-section-number">2.4</span> High level architecture</h2>
+<section id="high-level-architecture" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="high-level-architecture"><span class="header-section-number">1.4</span> High level architecture</h2>
 <p>GPUs have highly parallel processor architecture, comprising processing elements and memory hierarchy. Streaming processors do work on data, and that data and code are accessed from the high bandwidth memory (HMB3 in the diagram) via the L2 cache.</p>
 <p>The A100 GPU, for example, has 108 SMs, a 40MB L2 cache, and up to 2039 GB/s bandwidth from 80GB of HBM2 memory.</p>
 <p><em>NVLink Network Interconnect</em> enables GPU-to-GPU communication among up to 256 GPUs across multiple compute nodes.</p>
 </section>
-<section id="streaming-multiprocessors" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="streaming-multiprocessors"><span class="header-section-number">2.5</span> Streaming multiprocessors</h2>
-<p><img src="https://github.com/rastringer/GPU_CUDA_overview/blob/main/images/gpu_arch2.png?raw=true" width="1500"></p>
+<section id="streaming-multiprocessors" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="streaming-multiprocessors"><span class="header-section-number">1.5</span> Streaming multiprocessors</h2>
+<p><img src="https://github.com/rastringer/GPU_CUDA_overview/blob/main/images/gpu_arch2.png?raw=true" width="1000"></p>
 <p>Each Streaming Multiprocessor has a set of execution units, a reguster file and some shared memory.</p>
 <p>We also notice the <em>warp scheduler</em> - this is a basic unit of execution and a collection of threads. Typically these are groups of 32 threads, which are executed together by a SM.</p>
 <p><em>Tensor Cores</em> are specialized units focused on speeding up deep learning workloads. They accel at mixed-precision matrix multiply and gradient accumulation calculations.</p>
 </section>
-<section id="teraflops" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="teraflops"><span class="header-section-number">2.6</span> TeraFlops</h2>
+<section id="teraflops" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="teraflops"><span class="header-section-number">1.6</span> TeraFlops</h2>
 <p>It’s worth familiarizing ourselves with TFLOPS, which stands for Trillion Floating Point Operations Per Second. This is commonly used to measure the performance of GPUs.</p>
 <p>1 TFLOP = 1 trillion floating point calculations per second (what’s a floating point? Just a number with a decimal eg 1.2 or 12.3456)</p>
 <p>The H100 with SXM% board form-factor can perform 133.8 TFLOPs on FP16 inputs. FP16 just means <em>half precision</em>, or 1 bit for sign (+, -), 5 bits for the exponent, and 10 bits for decimal precision. This is a very popular format for AI training and inference, since a minimal drop in accuracy also means better speed and memory efficiency.</p>
@@ -672,13 +666,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./c_to_cuda.html" class="pagination-link" aria-label="Getting started with CUDA">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting started with CUDA</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting started with CUDA</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

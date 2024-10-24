@@ -5,11 +5,9 @@ project:
 book:
   title: "Introduction to GPUs and CUDA programming"
   author: "RA Stringer"
-  date: "10/24/2024"
-  cover-image: "images/logo.png"
+  cover-image: "/images/logo.png"
   chapters:
     - index.qmd
-    - intro.qmd
     - gpu_architecture.ipynb
     - c_to_cuda.ipynb
     - python_cuda.ipynb
@@ -21,7 +19,8 @@ book:
 
 format:
   html:
-    theme: cosmo
+    theme: sandstone
+    fontsize: 1.1em
   pdf:
     documentclass: scrreprt
 
