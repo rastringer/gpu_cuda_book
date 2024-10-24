@@ -1,3 +1,13 @@
 # Summary
 
-In summary, this book has no content whatsoever.
+In summary, we have looked at GPU architecture, threads, blocks, grids and programming with CUDA in C and Python. 
+
+To dive further into the world of accelerators, here are some suggested resources:
+
+[Nvidia courses](https://www.nvidia.com/en-gb/training/online/)
+
+[GPU Puzzles - very popular GitHub repo](https://github.com/srush/GPU-Puzzles)
+
+[Learn GPU Programming in Your Browser](https://www.answer.ai/posts/2024-09-12-gpupuzzles.html) -- from answer.ai, uses WebGPU Shading Language.
+
+[PyTorch CUDA backend](https://github.com/pytorch/pytorch/tree/main/aten/src/ATen/native/cuda) -- Look at some of the PyTorch CUDA backend code samples.

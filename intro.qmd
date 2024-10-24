@@ -1,3 +1,3 @@
 # Introduction
 
-
+This short course is to familiarize readers and participants with the basics of GPU architecture and how to approach their parallel programming model effectively.

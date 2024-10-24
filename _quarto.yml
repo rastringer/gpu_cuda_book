@@ -6,6 +6,7 @@ book:
   title: "Introduction to GPUs and CUDA programming"
   author: "RA Stringer"
   date: "10/24/2024"
+  cover-image: "images/logo.png"
   chapters:
     - index.qmd
     - intro.qmd
