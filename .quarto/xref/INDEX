@@ -1,0 +1,26 @@
+{
+  "gpu_architecture.ipynb": {
+    "gpu_architecture.html": "0ea445b7"
+  },
+  "c_to_cuda.ipynb": {
+    "c_to_cuda.html": "5a148b1f"
+  },
+  "python_cuda.ipynb": {
+    "python_cuda.html": "d08a2bb0"
+  },
+  "nsight_attention.ipynb": {
+    "nsight_attention.html": "ab200c5d"
+  },
+  "index.qmd": {
+    "index.html": "0c8dccbd"
+  },
+  "intro.qmd": {
+    "intro.html": "80150429"
+  },
+  "summary.qmd": {
+    "summary.html": "1a08e38c"
+  },
+  "references.qmd": {
+    "references.html": "b4bfcc08"
+  }
+}

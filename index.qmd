@@ -1,0 +1,3 @@
+# Preface {.unnumbered}
+
+This short course aims to equip readers and participants with an understanding of GPU architecture and considerations for programming accelerated workloads effectively.
