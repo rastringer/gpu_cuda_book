@@ -303,7 +303,7 @@ for i in range(max_iters):
 <p>If the iteration reaches max_iters without |z| exceeding 2, we consider the point to be in the Mandelbrot set. The number of iterations before |z| &gt; 2 determines the color of points outside the set, creating the characteristic fractal patterns.</p>
 <p><code>output[row, col] = i</code> stores the number of iterations it took for the point to escape – this value is used for coloring the plot.</p>
 <p>The Mandelbrot set can be useful for learning CUDA concepts since we can parallelize across threads and use memory access patterns, as well as GPU-CPU interaction. The calculations are done on the GPU, then sent back to the CPU for the display plot.</p>
-<div id="cell-9" class="cell" data-outputid="90c7b7a2-f42c-405e-9bfd-3ca11f936bfc" data-execution_count="1">
+<div id="cell-9" class="cell" data-outputid="90c7b7a2-f42c-405e-9bfd-3ca11f936bfc">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numba <span class="im">import</span> cuda</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -357,7 +357,7 @@ for i in range(max_iters):
 <span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Example usage</span></span>
 <span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a>plot_mandelbrot(<span class="op">-</span><span class="dv">2</span>, <span class="dv">1</span>, <span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>, <span class="dv">1000</span>, <span class="dv">1000</span>, <span class="dv">100</span>)</span>
 <span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Additional puzzle: Modify the code to zoom into an interesting part of the Mandelbrot set</span></span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Things to try: Modify the code to zoom into an interesting part of the Mandelbrot set</span></span>
 <span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a><span class="co"># Hint: Adjust the min_x, max_x, min_y, max_y parameters</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/usr/local/lib/python3.10/dist-packages/numba/cuda/cudadrv/devicearray.py:888: NumbaPerformanceWarning: Host array used in CUDA kernel will incur copy overhead to/from device.
